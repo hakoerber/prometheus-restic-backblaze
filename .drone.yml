@@ -1,0 +1,13 @@
+kind: pipeline
+type: kubernetes
+name: default
+steps:
+- name: image
+  image: registry.hkoerber.de/drone-kaniko:v1.0.0
+  pull: true
+  settings:
+    dockerfile: Dockerfile
+    registry: registry.hkoerber.de
+    repo: prometheus-restic-backblaze
+    tags:
+    - ${DRONE_COMMIT_SHA}
