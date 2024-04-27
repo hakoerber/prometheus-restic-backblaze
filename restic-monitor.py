@@ -8,6 +8,7 @@ import subprocess
 import time
 
 import prometheus_client
+import prometheus_client.core
 import yaml
 
 with open(sys.argv[1], 'r') as fd:
